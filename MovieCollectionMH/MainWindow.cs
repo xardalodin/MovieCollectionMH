@@ -14,6 +14,8 @@ namespace MovieCollectionMH
 {
     public partial class MainWindow : Form
     {
+       
+
         public MainWindow()
         {
             InitializeComponent();
@@ -68,10 +70,6 @@ namespace MovieCollectionMH
             return List;
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         // load from file
         private void button3_Click(object sender, EventArgs e)
@@ -91,7 +89,7 @@ namespace MovieCollectionMH
             catch (Exception x)
             {
 
-                MessageBox.Show("fileName Bad");
+                MessageBox.Show("fileName Bad"+x);
             }
         }
 
@@ -108,11 +106,48 @@ namespace MovieCollectionMH
 
         private void btStartServer_Click(object sender, EventArgs e)
         {
+            
             // create the server 
-            Frontend.Server from = new Frontend.Server(tbfiletoServer.Text);
+            Frontend.Server from = new Frontend.Server(tbfiletoServer.Text,tbIpAddress.Text);
             // create the movieList
             from.Show();          
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fdlg = new OpenFileDialog();
+            if (fdlg.ShowDialog() == DialogResult.OK)
+            {
+                tbfiletoServer.Text = fdlg.FileName;
+            } 
+        }
+
+        private void btnBrowseSaveToJson_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fdlg = new OpenFileDialog();
+            if (fdlg.ShowDialog() == DialogResult.OK)
+            {
+                tbJsonSave.Text = fdlg.FileName;
+            }
+        }
+
+        private void btnBrowseSaveToExcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fdlg = new OpenFileDialog();
+            if (fdlg.ShowDialog() == DialogResult.OK)
+            {
+                tbSaveExcel.Text = fdlg.FileName;
+            }
+        }
+
+        private void btnBrowseLoadExcel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fdlg = new OpenFileDialog();
+            if (fdlg.ShowDialog() == DialogResult.OK)
+            {
+                tbLoadExcel.Text = fdlg.FileName;
+            }
         }
     }
 }

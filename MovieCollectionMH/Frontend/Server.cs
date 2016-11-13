@@ -14,14 +14,14 @@ namespace MovieCollectionMH.Frontend
     {
 
         backend.fileserver.jsonFileServerControlls server;
-        public Server(string filename)
+        public Server(string filename,string ip)
         {
             InitializeComponent();
 
             //(start server 
             server = new backend.fileserver.jsonFileServerControlls();
 
-            server.StartServer(filename);
+            server.StartServer(filename, ip);
 
         }
 

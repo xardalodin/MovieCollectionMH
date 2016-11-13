@@ -46,10 +46,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.tbIpAddress = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnBrowseLoadExcel = new System.Windows.Forms.Button();
+            this.btnBrowseSaveToExcel = new System.Windows.Forms.Button();
+            this.btnBrowseSaveToJson = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
             // 
+            this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listView1.AllowDrop = true;
             this.listView1.AutoArrange = false;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -57,6 +63,8 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.GridLines = true;
+            this.listView1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.listView1.LabelEdit = true;
             this.listView1.Location = new System.Drawing.Point(12, 12);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(234, 461);
@@ -64,7 +72,7 @@
             this.listView1.TabStop = false;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+          
             // 
             // columnHeader1
             // 
@@ -191,21 +199,73 @@
             this.button5.TabIndex = 13;
             this.button5.Text = "Browse";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(553, 357);
+            this.label5.Location = new System.Drawing.Point(553, 329);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 14;
             this.label5.Text = "label5";
+            // 
+            // tbIpAddress
+            // 
+            this.tbIpAddress.Location = new System.Drawing.Point(553, 372);
+            this.tbIpAddress.Name = "tbIpAddress";
+            this.tbIpAddress.Size = new System.Drawing.Size(311, 20);
+            this.tbIpAddress.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(553, 353);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(185, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "IP Adress and Port :192.168.1.2:8080";
+            // 
+            // btnBrowseLoadExcel
+            // 
+            this.btnBrowseLoadExcel.Location = new System.Drawing.Point(671, 25);
+            this.btnBrowseLoadExcel.Name = "btnBrowseLoadExcel";
+            this.btnBrowseLoadExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowseLoadExcel.TabIndex = 17;
+            this.btnBrowseLoadExcel.Text = "Browse";
+            this.btnBrowseLoadExcel.UseVisualStyleBackColor = true;
+            this.btnBrowseLoadExcel.Click += new System.EventHandler(this.btnBrowseLoadExcel_Click);
+            // 
+            // btnBrowseSaveToExcel
+            // 
+            this.btnBrowseSaveToExcel.Location = new System.Drawing.Point(671, 86);
+            this.btnBrowseSaveToExcel.Name = "btnBrowseSaveToExcel";
+            this.btnBrowseSaveToExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowseSaveToExcel.TabIndex = 18;
+            this.btnBrowseSaveToExcel.Text = "Browse";
+            this.btnBrowseSaveToExcel.UseVisualStyleBackColor = true;
+            this.btnBrowseSaveToExcel.Click += new System.EventHandler(this.btnBrowseSaveToExcel_Click);
+            // 
+            // btnBrowseSaveToJson
+            // 
+            this.btnBrowseSaveToJson.Location = new System.Drawing.Point(671, 151);
+            this.btnBrowseSaveToJson.Name = "btnBrowseSaveToJson";
+            this.btnBrowseSaveToJson.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowseSaveToJson.TabIndex = 19;
+            this.btnBrowseSaveToJson.Text = "Browse";
+            this.btnBrowseSaveToJson.UseVisualStyleBackColor = true;
+            this.btnBrowseSaveToJson.Click += new System.EventHandler(this.btnBrowseSaveToJson_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 485);
+            this.Controls.Add(this.btnBrowseSaveToJson);
+            this.Controls.Add(this.btnBrowseSaveToExcel);
+            this.Controls.Add(this.btnBrowseLoadExcel);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbIpAddress);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label4);
@@ -247,6 +307,11 @@
         public System.Windows.Forms.ColumnHeader columnHeader1;
         public System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbIpAddress;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnBrowseLoadExcel;
+        private System.Windows.Forms.Button btnBrowseSaveToExcel;
+        private System.Windows.Forms.Button btnBrowseSaveToJson;
     }
 }
 

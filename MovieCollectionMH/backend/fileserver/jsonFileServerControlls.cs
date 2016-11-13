@@ -18,12 +18,14 @@ namespace MovieCollectionMH.backend.fileserver
         private bool running = true;
         private string FileN;
 
-        public void StartServer(string filename)
+        public void StartServer(string filename,string ip)
         {
 
             FileN = filename;
+            string  theIpAddress = "http://"+ip+"/simpleserver/";
             listener = new HttpListener();
-            listener.Prefixes.Add("http://192.168.1.2:8080/simpleserver/");
+            //listener.Prefixes.Add("http://192.168.1.2:8080/simpleserver/");
+            listener.Prefixes.Add(theIpAddress);
             listener.Start();
 
             backServer = new BackgroundWorker();  // create background worker 
